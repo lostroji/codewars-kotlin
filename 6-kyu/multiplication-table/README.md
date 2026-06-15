@@ -1,8 +1,8 @@
-Multiplication Table
+##Multiplication Table
 
 Generate an n × n multiplication table and return it as an Array<IntArray>.
 
-Approach
+#Approach
 
 My initial idea was to build the table row by row.
 
@@ -16,10 +16,11 @@ Each row is stored in an IntArray, and the rows are collected into an Array<IntA
 
 I used nested loops:
 
-The outer loop determines the current multiplier.
-The inner loop generates all multiples for that row.
-Each completed row is inserted into the final table.
-Example
+- The outer loop determines the current multiplier.
+- The inner loop generates all multiples for that row.
+- Each completed row is inserted into the final table.
+
+#Example
 
 For size = 3:
 
@@ -28,13 +29,14 @@ For size = 3:
   [2, 4, 6],
   [3, 6, 9]
 ]
-Complexity
+
+#Complexity
 Time Complexity: O(n²)
 Space Complexity: O(n²)
 
 The algorithm generates every cell in the table exactly once.
 
-What I Learned
+#What I Learned
 
 My first implementation used mutable lists and converted them to arrays afterward. While debugging, I discovered that reusing the same list across iterations caused every row to contain values from previous rows.
 
