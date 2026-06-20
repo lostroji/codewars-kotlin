@@ -1,24 +1,27 @@
 package solution
 
-import java.util.Scanner
-
 object StockList {
     fun stockSummary(lstOfArt: Array<String>, lstOfCat: Array<String>): String {
-        
         val stringList = mutableListOf<String>()
+        val artAndCatMap = mutableMapOf<String, Int>()
+
         for (char in lstOfCat) { // char = A
             var counter = 0
 
             lstOfArt.forEach {
-                if (it.first().toString() == char) { //ABART 20 -> A == A
+                if (it.first().toString() == char) {
                     counter += it.substringAfter(" ").toInt()
                 }
             }
             stringList.add("($char : $counter)")
         }
+
+        if (lstOfArt.isEmpty() || lstOfCat.isEmpty()) return ""
+
         return stringList.joinToString(" - ")
     }
 }
+
 
 fun main() {
 
