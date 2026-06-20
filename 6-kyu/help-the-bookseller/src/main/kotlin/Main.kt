@@ -25,10 +25,32 @@ object StockList {
 
 fun main() {
 
-    val a = arrayOf("BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600")
-    val b = arrayOf("A", "B", "C", "D")
-    println(StockList.stockSummary(a, b))
-    val c = arrayOf("ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600")
-    val d = arrayOf("A", "B")
-    println(StockList.stockSummary(c, d))
+    val testCases = listOf(
+        Pair(
+            arrayOf("BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"),
+            arrayOf("A", "B", "C", "D")
+        ),
+        Pair(
+            arrayOf("ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"),
+            arrayOf("A", "B")
+        ),
+        Pair(
+            emptyArray<String>(),
+            arrayOf("A", "B", "C")
+        ),
+        Pair(
+            arrayOf("ABAR 200", "BKWR 250"),
+            emptyArray<String>()
+        ),
+        Pair(
+            arrayOf("ABAR 100", "AXYZ 50", "BKWR 200"),
+            arrayOf("A", "B", "C")
+        )
+    )
+
+    testCases.forEachIndexed { index, (arts, cats) ->
+        println("Test ${index + 1}")
+        println(StockList.stockSummary(arts, cats))
+        println()
+    }
 }
