@@ -1,5 +1,9 @@
 # Find The Parity Outlier (Kotlin)
 
+**Codewars:** 6 kyu
+**Language:** Kotlin
+**Completed:** 2026-06-15
+
 This repository contains my solution to the Codewars kata **“Find The Parity Outlier”** (6 kyu).
 
 Problem link: https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/kotlin
