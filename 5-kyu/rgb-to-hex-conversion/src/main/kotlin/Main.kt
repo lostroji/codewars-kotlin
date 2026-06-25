@@ -32,10 +32,12 @@ fun rgb(r: Int, g: Int, b: Int): String { //255, 255, 300
 }
 
 fun main() {
-    println(rgb(0, 0, 0))
-    println(rgb(0, 0, -20))
-    println(rgb(300, 255, 255))
-    println(rgb(173, 255, 47))
-    println(rgb(148, 0, 211))
-    println(rgb(9, 9, 9))
+    check(rgb(0, 0, 0) == "000000")
+    check(rgb(0, 0, -20) == "000000")
+    check(rgb(300, 255, 255) == "FFFFFF")
+    check(rgb(173, 255, 47) == "ADFF2F")
+    check(rgb(148, 0, 211) == "9400D3")
+    check(rgb(9, 9, 9) == "090909")
+
+    println("All test cases passed ✅")
 }
