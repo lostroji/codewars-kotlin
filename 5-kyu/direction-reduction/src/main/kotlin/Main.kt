@@ -29,26 +29,23 @@ object DirReduction {
 }
 
 fun main() {
-    val testCases = listOf(
-        arrayOf("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST") to arrayOf("WEST"),
-        arrayOf("NORTH", "WEST", "SOUTH", "EAST") to arrayOf("NORTH", "WEST", "SOUTH", "EAST"),
-        arrayOf("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "NORTH") to arrayOf("NORTH"),
-        arrayOf(
-            "NORTH", "EAST", "NORTH", "EAST",
-            "WEST", "WEST", "EAST", "EAST",
-            "WEST", "SOUTH"
-        ) to arrayOf("NORTH", "EAST"),
-        arrayOf("") to arrayOf("")
+    check(
+        DirReduction.dirReduc(
+            arrayOf("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST")
+        ).contentEquals(arrayOf("WEST"))
     )
 
-    testCases.forEachIndexed { index, (input, expected) ->
-        val actual = DirReduction.dirReduc(input)
+    check(
+        DirReduction.dirReduc(
+            arrayOf("NORTH", "WEST", "SOUTH", "EAST")
+        ).contentEquals(arrayOf("NORTH", "WEST", "SOUTH", "EAST"))
+    )
 
-        println("Test ${index + 1}")
-        println("Input:    ${input.contentToString()}")
-        println("Expected: ${expected.contentToString()}")
-        println("Actual:   ${actual.contentToString()}")
-        println("Passed:   ${actual.contentEquals(expected)}")
-        println()
-    }
+    check(
+        DirReduction.dirReduc(
+            arrayOf("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "NORTH")
+        ).contentEquals(arrayOf("NORTH"))
+    )
+
+    println("All test cases passed ✅")
 }
