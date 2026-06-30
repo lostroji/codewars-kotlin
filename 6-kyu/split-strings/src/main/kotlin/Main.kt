@@ -14,6 +14,9 @@ fun solution(s: String): List<String> {
 }
 
 fun main() {
-    println(solution("abcdef"))
-    println(solution("abcdefg"))
+    check(solution("abc") == listOf("ab", "c_"))
+    check(solution("abcdef") == listOf("ab", "cd", "ef"))
+    check(solution("") == emptyList<String>())
+
+    println("All tests passed!")
 }
